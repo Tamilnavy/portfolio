@@ -29,9 +29,9 @@ const About = () => {
     return (
         <section id="about" className="section" style={{ background: '#ffffff' }}>
             <div className="container">
-                
+
                 {/* Intro Section */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 0.8fr)', gap: '4rem', marginBottom: '6rem', alignItems: 'flex-start' }}>
+                <div className="expertise-grid" style={{ marginBottom: '6rem' }}>
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -57,10 +57,10 @@ const About = () => {
                 {/* Services Grid (Authentic Skills) */}
                 <div id="services-anchor" style={{ marginBottom: '3rem' }}>
                     <h3 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '2.5rem', color: '#111827' }}>My Specialized Services</h3>
-                    <div className="services-grid" style={{ 
-                        display: 'grid', 
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
-                        gap: '1.5rem' 
+                    <div className="services-grid" style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                        gap: '1.5rem'
                     }}>
                         {services.map((service, idx) => (
                             <motion.div
@@ -69,9 +69,9 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                style={{ 
-                                    padding: '3rem 2.5rem', 
-                                    background: '#ffffff', 
+                                style={{
+                                    padding: '3rem 2.5rem',
+                                    background: '#ffffff',
                                     border: '1px solid #f1f5f9',
                                     borderRadius: '1.25rem',
                                     boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
@@ -80,10 +80,10 @@ const About = () => {
                                 className="service-card"
                             >
                                 <div style={{ color: 'var(--accent-color)', marginBottom: '1.5rem' }}>{service.icon}</div>
-                                <h4 style={{ 
-                                    fontSize: '1.4rem', 
-                                    fontWeight: 800, 
-                                    marginBottom: '1rem', 
+                                <h4 style={{
+                                    fontSize: '1.4rem',
+                                    fontWeight: 800,
+                                    marginBottom: '1rem',
                                     color: '#111827',
                                     letterSpacing: '-0.02em'
                                 }}>
@@ -104,8 +104,30 @@ const About = () => {
                     transform: translateY(-5px);
                     box-shadow: 0 10px 30px rgba(16, 185, 129, 0.05);
                 }
+                .expertise-grid, .hero-asymmetric-grid {
+                    display: grid;
+                    grid-template-columns: 1.2fr 0.8fr;
+                    gap: 4rem;
+                    align-items: flex-start;
+                }
+
                 @media (max-width: 968px) {
-                    div[style*="grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr)"] { grid-template-columns: 1fr !important; gap: 2rem; }
+                    .section {
+                        padding: 3rem 1.25rem;
+                    }
+
+                    .expertise-grid, .hero-asymmetric-grid {
+                        grid-template-columns: 1fr !important;
+                        text-align: center;
+                        gap: 3rem;
+                    }
+
+                    .expertise-grid > div, .hero-asymmetric-grid > div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                    }
                     .services-grid { grid-template-columns: 1fr !important; }
                 }
             `}</style>

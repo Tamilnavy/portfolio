@@ -6,13 +6,7 @@ const Hero = () => {
     return (
         <section id="home" className="section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative' }}>
             <div className="container">
-                <div className="hero-asymmetric-grid" style={{ 
-                    display: 'grid', 
-                    gridTemplateColumns: '1.2fr 0.8fr', 
-                    gap: '4rem', 
-                    alignItems: 'center' 
-                }}>
-                    
+                <div className="hero-asymmetric-grid">
                     {/* Content Section */}
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
@@ -26,7 +20,7 @@ const Hero = () => {
                             </span>
                         </div>
 
-                        <h1 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.25rem)', color: '#111827', marginBottom: '1rem', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
+                        <h1 style={{ fontSize: 'clamp(2.25rem, 6vw, 4rem)', color: '#111827', marginBottom: '1rem', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
                             Building Scalable & <br />
                             <span style={{ color: 'var(--accent-color)' }}>High-Performance Web Apps.</span>
                         </h1>
@@ -64,11 +58,11 @@ const Hero = () => {
                         transition={{ duration: 1, delay: 0.2 }}
                         style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}
                     >
-                        <motion.div 
+                        <motion.div
                             className="hero-image-circle"
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            style={{ 
+                            style={{
                                 width: 'min(400px, 80vw)',
                                 height: 'min(400px, 80vw)',
                                 borderRadius: '50%',
@@ -80,33 +74,31 @@ const Hero = () => {
                                 overflow: 'hidden'
                             }}
                         >
-                            <img 
-                                src="/assets/profile_real.jpg" 
-                                alt="Tamilarasan J" 
-                                style={{ 
-                                    width: '100%', 
-                                    height: '100%', 
+                            <img
+                                src="/assets/profile_real.jpg"
+                                alt="Tamilarasan J"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
                                     objectFit: 'cover',
                                     borderRadius: '50%',
                                     objectPosition: 'center 20%'
                                 }}
                             />
                         </motion.div>
-                        
-                        {/* Decorative Glow */}
-                        <div style={{ 
-                            position: 'absolute', 
-                            top: '10%', 
-                            left: '10%', 
-                            width: '80%', 
-                            height: '80%', 
-                            background: 'var(--accent-glow)', 
-                            borderRadius: '50%', 
+
+                        <div style={{
+                            position: 'absolute',
+                            top: '10%',
+                            left: '10%',
+                            width: '80%',
+                            height: '80%',
+                            background: 'var(--accent-glow)',
+                            borderRadius: '50%',
                             filter: 'blur(60px)',
-                            zIndex: 1 
+                            zIndex: 1
                         }} />
                     </motion.div>
-
                 </div>
             </div>
 
@@ -119,6 +111,12 @@ const Hero = () => {
             </motion.div>
 
             <style>{`
+                .hero-asymmetric-grid {
+                    display: grid;
+                    grid-template-columns: 1.2fr 0.8fr;
+                    gap: 4rem;
+                    align-items: center;
+                }
                 .social-icon-modern {
                     color: #94a3b8;
                     transition: all 0.3s ease;
@@ -128,8 +126,16 @@ const Hero = () => {
                     transform: translateY(-3px);
                 }
                 @media (max-width: 968px) {
-                    .hero-asymmetric-grid { grid-template-columns: 1fr !important; gap: 4rem; text-align: center; }
-                    .hero-asymmetric-grid > div { display: flex; flex-direction: column; align-items: center; }
+                    .hero-asymmetric-grid { 
+                        grid-template-columns: 1fr !important; 
+                        gap: 3rem; 
+                        text-align: center; 
+                    }
+                    .hero-asymmetric-grid > div { 
+                        display: flex; 
+                        flex-direction: column; 
+                        align-items: center; 
+                    }
                     h1 br { display: none; }
                 }
             `}</style>
