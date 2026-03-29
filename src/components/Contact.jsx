@@ -79,16 +79,16 @@ const Contact = () => {
             </div>
 
             {/* Footer */}
-            <footer style={{ marginTop: '8rem', borderTop: '1px solid var(--border-color)', padding: '4rem 0 2rem' }}>
-                <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}>
+            <footer style={{ marginTop: '1rem', borderTop: '1px solid var(--border-color)', padding: '2rem 0 1.5rem' }}>
+                <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
                     <div style={{ fontSize: '1.5rem', fontWeight: 800, letterSpacing: '-1.5px' }}>
-                        TAMIL<span className="gradient-text">.</span>
+                        TAMIL<span style={{ color: 'var(--accent-color)' }}>.</span>
                     </div>
                     
-                    <ul style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                        {['Home', 'About', 'Experience', 'Projects', 'Contact'].map(link => (
+                    <ul style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center', listStyle: 'none' }}>
+                        {['Home', 'About', 'Projects', 'Contact'].map(link => (
                             <li key={link}>
-                                <a href={`#${link.toLowerCase()}`} style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{link}</a>
+                                <a href={`#${link.toLowerCase()}`} style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', textDecoration: 'none' }}>{link}</a>
                             </li>
                         ))}
                     </ul>

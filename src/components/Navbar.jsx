@@ -103,6 +103,10 @@ const Navbar = () => {
             </AnimatePresence>
 
             <style>{`
+                :root {
+                    --max-width: 1200px;
+                    --section-padding: 2.5rem 2rem;
+                }
                 .nav-wrapper {
                     position: fixed;
                     top: 0;
