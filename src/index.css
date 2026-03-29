@@ -275,35 +275,35 @@ p {
 }
 
 /* Grid Layouts */
-.responsive-grid {
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.responsive-layout-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 4rem;
   align-items: flex-start;
 }
 
-.hero-grid {
+.hero-layout-grid {
   display: grid;
   grid-template-columns: 1.4fr 0.6fr;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
 }
 
+.centering-container {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 968px) {
-  .section-padding {
-    padding: 3rem 1.5rem;
+  .section {
+    padding: 3rem 1.25rem;
   }
 
-  .section-header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .section-header .sub {
-    justify-content: center;
-  }
-
-  .hero-grid, .responsive-grid {
+  .responsive-layout-grid, .hero-layout-grid {
     grid-template-columns: 1fr !important;
     text-align: center;
     gap: 2.5rem;
