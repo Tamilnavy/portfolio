@@ -158,6 +158,28 @@ const Navbar = () => {
                     text-decoration: none;
                 }
 
+                .hero-grid {
+                  display: grid;
+                  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+                  gap: 2rem;
+                  align-items: center;
+                }
+
+                .responsive-grid {
+                  display: grid;
+                  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+                  gap: 4rem;
+                  align-items: flex-start;
+                }
+
+                @media (max-width: 968px) {
+                  .hero-grid, .responsive-grid {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                    gap: 2rem;
+                  }
+                }
+
                 .logo-indicator {
                     width: 8px;
                     height: 8px;
@@ -230,27 +252,31 @@ const Navbar = () => {
                 .mobile-side-nav {
                     position: fixed;
                     top: 5rem;
-                    left: 1.5rem;
-                    right: 1.5rem;
-                    background: #ffffff;
-                    border: 1px solid #f1f5f9;
+                    left: 1rem;
+                    right: 1rem;
+                    background: rgba(255, 255, 255, 0.95);
+                    backdrop-filter: blur(20px);
+                    border: 1px solid rgba(241, 245, 249, 0.8);
                     border-radius: 2rem;
-                    padding: 2.5rem;
+                    padding: 2rem;
                     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+                    z-index: 999;
+                    pointer-events: auto;
                 }
 
                 .mobile-nav-inner {
                     display: flex;
                     flex-direction: column;
-                    gap: 1.5rem;
+                    gap: 1.25rem;
                     align-items: center;
                 }
 
                 .mobile-nav-link {
-                    font-size: 1.5rem;
-                    font-weight: 800;
+                    font-size: 1.25rem;
+                    font-weight: 700;
                     color: #111827;
                     text-decoration: none;
+                    padding: 0.5rem;
                 }
 
                 .mobile-cta-btn {
