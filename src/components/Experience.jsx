@@ -43,14 +43,11 @@ const Experience = () => {
                         {expData.map((exp, idx) => (
                             <motion.div
                                 key={idx}
+                                className="journey-item"
                                 initial={{ opacity: 0, x: -25 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                                style={{ position: 'relative', paddingLeft: '4rem' }}
                             >
                                 {/* Marker */}
-                                <div style={{ 
+                                <div className="journey-marker" style={{ 
                                     position: 'absolute', 
                                     left: '-5px', 
                                     top: '0', 
@@ -91,6 +88,20 @@ const Experience = () => {
                     </div>
                 </div>
             </div>
+
+            <style>{`
+                .journey-item {
+                    position: relative;
+                    padding-left: 4rem;
+                }
+                @media (max-width: 968px) {
+                    .journey-item { padding-left: 2.5rem; }
+                    .journey-marker { left: -5px; }
+                }
+                @media (max-width: 480px) {
+                    .journey-item { padding-left: 2rem; }
+                }
+            `}</style>
         </section>
     );
 };

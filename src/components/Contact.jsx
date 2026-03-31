@@ -11,7 +11,13 @@ const Contact = () => {
                     <h2>Let's <span className="gradient-text">Connect</span></h2>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '5rem', maxWidth: '1000px', margin: '0 auto' }}>
+                <div className="contact-grid" style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+                    gap: '4rem', 
+                    maxWidth: '1000px', 
+                    margin: '0 auto' 
+                }}>
                     
                     {/* Contact Info */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -98,6 +104,17 @@ const Contact = () => {
                     </div>
                 </div>
             </footer>
+            
+            <style>{`
+                @media (max-width: 968px) {
+                    .contact-grid { gap: 3rem !important; }
+                    .glass-panel { padding: 1.5rem !important; }
+                }
+                @media (max-width: 480px) {
+                    .contact-grid { gap: 2.5rem !important; }
+                    h2 { font-size: 2rem !important; }
+                }
+            `}</style>
         </section>
     );
 };

@@ -59,7 +59,7 @@ const About = () => {
                     <h3 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '2.5rem', color: '#111827' }}>My Specialized Services</h3>
                     <div className="services-grid" style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                         gap: '1.5rem'
                     }}>
                         {services.map((service, idx) => (
@@ -122,6 +122,8 @@ const About = () => {
                         gap: 3rem;
                     }
 
+                    .expertise-grid { margin-bottom: 3.5rem !important; }
+
                     .expertise-grid > div, .hero-asymmetric-grid > div {
                         display: flex;
                         flex-direction: column;
@@ -129,6 +131,12 @@ const About = () => {
                         text-align: center;
                     }
                     .services-grid { grid-template-columns: 1fr !important; }
+                    .service-card { padding: 2rem 1.5rem !important; }
+                }
+
+                @media (max-width: 480px) {
+                    .expertise-grid { gap: 2rem; }
+                    h2 { font-size: 1.85rem !important; }
                 }
             `}</style>
         </section>

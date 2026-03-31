@@ -131,9 +131,9 @@ const Navbar = () => {
                     background: rgba(255, 255, 255, 0.7);
                     backdrop-filter: blur(15px);
                     border: 1px solid rgba(241, 245, 249, 0.8);
-                    padding: 0.6rem 2rem;
+                    padding: 0.6rem 1.75rem;
                     border-radius: 999px;
-                    width: 100%;
+                    width: calc(100% - 2rem);
                     max-width: 1000px;
                     transition: all 0.4s ease;
                     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
@@ -252,8 +252,8 @@ const Navbar = () => {
                 .mobile-side-nav {
                     position: fixed;
                     top: 5rem;
-                    left: 1rem;
-                    right: 1rem;
+                    left: 0.75rem;
+                    right: 0.75rem;
                     background: rgba(255, 255, 255, 0.95);
                     backdrop-filter: blur(20px);
                     border: 1px solid rgba(241, 245, 249, 0.8);
@@ -293,7 +293,13 @@ const Navbar = () => {
                     .nav-links-desktop { display: none; }
                     .nav-btn-premium { display: none; }
                     .nav-mobile-btn { display: block; }
-                    .nav-island { padding: 0.75rem 1.5rem; }
+                    .nav-island { padding: 0.6rem 1.25rem; width: calc(100% - 2.5rem); }
+                    .nav-logo-modern { font-size: 0.95rem; }
+                }
+
+                @media (max-width: 480px) {
+                    .nav-island { width: calc(100% - 2rem); padding: 0.5rem 1rem; }
+                    .nav-logo-modern { font-size: 0.9rem; }
                 }
             `}</style>
         </nav>

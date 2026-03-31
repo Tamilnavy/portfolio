@@ -17,7 +17,8 @@
 
   /* Layout */
   --max-width: 1200px;
-  --section-padding: 3rem 2rem;
+  --section-padding: 5rem 2rem;
+  --section-padding-mobile: 3.5rem 1.25rem;
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -94,6 +95,12 @@ p {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
 }
 
 .section {
@@ -317,26 +324,27 @@ p {
 
 @media (max-width: 968px) {
   .section {
-    padding: 3rem 1.25rem;
+    padding: var(--section-padding-mobile);
   }
 
   .responsive-layout-grid,
   .hero-layout-grid {
     grid-template-columns: 1fr !important;
     text-align: center;
-    gap: 2.5rem;
+    gap: 3rem;
   }
 
-  .hero-grid motion.div,
-  .responsive-grid motion.div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  h1 {
+    font-size: clamp(2.25rem, 8vw, 3rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
   }
 
   .circle-img-container {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
   }
 
   p {
@@ -347,10 +355,30 @@ p {
   .flex-mobile-stack {
     flex-direction: column;
     width: 100%;
+    gap: 1rem !important;
   }
 
   .flex-mobile-stack .btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  h1 {
+    font-size: 2.25rem !important;
+  }
+
+  .hero-image-circle {
+    width: 280px !important;
+    height: 280px !important;
   }
 }

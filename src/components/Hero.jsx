@@ -20,16 +20,16 @@ const Hero = () => {
                             </span>
                         </div>
 
-                        <h1 style={{ fontSize: 'clamp(2.25rem, 6vw, 4rem)', color: '#111827', marginBottom: '1rem', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
+                        <h1 style={{ fontSize: 'clamp(2.15rem, 7vw, 4rem)', color: '#111827', marginBottom: '1.25rem', letterSpacing: '-0.04em', lineHeight: 1.1 }}>
                             Building Scalable & <br />
-                            <span style={{ color: 'var(--accent-color)' }}>High-Performance Web Apps.</span>
+                            <span style={{ color: 'var(--accent-color)' }}>Robust Web Apps.</span>
                         </h1>
 
                         <p style={{ fontSize: '1.05rem', color: '#475569', maxWidth: '580px', marginBottom: '3rem', lineHeight: 1.8 }}>
                             Engineering robust <span style={{ color: '#111827', fontWeight: 700 }}>distributed systems</span> and high-performance web architectures. Specialized in <span style={{ color: 'var(--accent-color)', fontWeight: 600 }}>Java Spring Boot, Spring Security, and the MERN stack</span> for scalable enterprise solutions.
                         </p>
 
-                        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
+                        <div className="flex-mobile-stack" style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
                             <a href="#projects" className="btn btn-primary">
                                 View My Projects <ChevronRight size={18} />
                             </a>
@@ -128,7 +128,7 @@ const Hero = () => {
                 @media (max-width: 968px) {
                     .hero-asymmetric-grid { 
                         grid-template-columns: 1fr !important; 
-                        gap: 3rem; 
+                        gap: 3.5rem; 
                         text-align: center; 
                     }
                     .hero-asymmetric-grid > div { 
@@ -137,6 +137,12 @@ const Hero = () => {
                         align-items: center; 
                     }
                     h1 br { display: none; }
+                }
+
+                @media (max-width: 480px) {
+                    .hero-asymmetric-grid { gap: 2.5rem; }
+                    .flex-mobile-stack { width: 100%; display: flex; flex-direction: column; }
+                    .flex-mobile-stack .btn { width: 100%; }
                 }
             `}</style>
         </section>

@@ -32,7 +32,11 @@ const Projects = () => {
                     <h2 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.25rem)', fontWeight: 800, color: '#111827', letterSpacing: '-0.04em' }}>Technical Implementations.</h2>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '2.5rem' }}>
+                <div style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+                    gap: '2.5rem' 
+                }}>
                     {projects.map((project, idx) => (
                         <motion.div
                             key={idx}
@@ -89,6 +93,10 @@ const Projects = () => {
                 .project-simple-link:hover {
                     color: var(--accent-color);
                     transform: translateX(5px);
+                }
+                @media (max-width: 968px) {
+                    .simple-project-card { padding: 2rem 1.5rem !important; }
+                    .project-simple-link { font-size: 0.95rem; }
                 }
                 @media (max-width: 480px) {
                     .simple-project-card { padding: 1.5rem !important; }
