@@ -13,8 +13,8 @@ const Hero = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
-                            <div style={{ height: '2px', width: '30px', background: 'var(--accent-color)' }} />
+                        <div className="hero-badge-container" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
+                            <div className="hero-badge-line" style={{ height: '2px', width: '30px', background: 'var(--accent-color)' }} />
                             <span style={{ color: 'var(--accent-color)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.2rem' }}>
                                 Full-Stack Software Engineer
                             </span>
@@ -126,6 +126,9 @@ const Hero = () => {
                     transform: translateY(-3px);
                 }
                 @media (max-width: 968px) {
+                    .section#home {
+                        padding-top: 7rem !important;
+                    }
                     .hero-asymmetric-grid { 
                         grid-template-columns: 1fr !important; 
                         gap: 3.5rem; 
@@ -136,10 +139,20 @@ const Hero = () => {
                         flex-direction: column; 
                         align-items: center; 
                     }
+                    .hero-badge-container {
+                        justify-content: center;
+                        gap: 0.5rem !important;
+                    }
+                    .hero-badge-line {
+                        display: none;
+                    }
                     h1 br { display: none; }
                 }
 
                 @media (max-width: 480px) {
+                    .section#home {
+                        padding-top: 6.5rem !important;
+                    }
                     .hero-asymmetric-grid { gap: 2.5rem; }
                     .flex-mobile-stack { width: 100%; display: flex; flex-direction: column; }
                     .flex-mobile-stack .btn { width: 100%; }
